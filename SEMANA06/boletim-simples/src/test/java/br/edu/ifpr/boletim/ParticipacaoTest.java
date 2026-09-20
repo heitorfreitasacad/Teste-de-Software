@@ -1,0 +1,43 @@
+package br.edu.ifpr.boletim;
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class ParticipacaoTest {
+
+    @Test
+    void deveSomarTresPontosQuandoEntregouEParticipou() {
+        Participacao participacao = new Participacao();
+
+        int resultado = participacao.calcularPontos(true, true);
+
+        assertEquals(3, resultado);
+    }
+
+    @Test
+    void deveSomarDoisPontosQuandoSoEntregou() {
+        Participacao participacao = new Participacao();
+
+        int resultado = participacao.calcularPontos(true, false);
+
+        assertEquals(2, resultado);
+    }
+
+    @Test
+    void deveSomarUmPontoQuandoSoParticipou() {
+        Participacao participacao = new Participacao();
+
+        int resultado = participacao.calcularPontos(false, true);
+
+        assertEquals(1, resultado);
+    }
+
+    @Test
+    void deveSomarZeroPontosQuandoNaoFezNada() {
+        Participacao participacao = new Participacao();
+
+        int resultado = participacao.calcularPontos(false, false);
+
+        assertEquals(0, resultado);
+    }
+}
