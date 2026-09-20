@@ -1,6 +1,7 @@
 # Relatório do grupo
 
-Integrantes: Heitor Freitas
+Integrantes: Heitor Henrique Scramim de Freitas
+RA: 24190382-2
 
 ## Modelo adotado para curto-circuito e exceções
 
@@ -104,7 +105,7 @@ flowchart TD
     N1 -->|não| N2{bloqueado?}
     N2 -->|sim| EXIT
     N2 -->|não| N3{comprasAnteriores==0?}
-    N3 -->|sim| N4{total>100000 || expresso?}
+    N3 -->|sim| N4{"total>100000 || expresso?"}
     N3 -->|não| N5{total>500000 && !vip?}
     N4 -->|sim| EXIT
     N4 -->|não| EXIT
